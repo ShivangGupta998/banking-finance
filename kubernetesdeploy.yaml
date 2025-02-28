@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: bankapp-container
-        image: shivanggupta998/sh-bankapp:latest
+        image: shivanggupta998/bankapp-app:latest
         ports:
         - containerPort: 8081
 ---
