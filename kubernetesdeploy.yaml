@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: bankapp-deploy
   labels:
-    app: bankapp-app
+    app: bankapp-deploy-lbl
 spec:
   replicas: 3
   selector:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: bankapp-container
-        image: shivanggupta998/bankapp-app
+        image: shivanggupta998/SH-bankapp:latest
         ports:
         - containerPort: 8081
 ---
@@ -25,10 +25,10 @@ kind: Service
 metadata:
   name: bankapp-np-service
   labels:
-    app: bankapp-app
+    app: bankapp--np-app
 spec:
   selector:
-    app: bankapp-app
+    app: bankapp-deploy-lbl
 
   type: NodePort
   ports:
